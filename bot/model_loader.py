@@ -17,10 +17,10 @@ def loader_model():
     Загружает модель и токенизатор из файлов.
     """
     # Загружаем модель
-    model = load_model("model/text_classification_model.h5")
+    model = load_model("model/text_classification_model2.h5")
 
     # Загружаем токенизатор
-    with open("model/tfidf_tokenizer.pkl", "rb") as file:
+    with open("model/tfidf_tokenizer2.pkl", "rb") as file:
         tokenizer = pickle.load(file)
 
     return model, tokenizer
