@@ -23,7 +23,10 @@ async def analyze_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     probability = predict_text(user_text, model, tokenizer)
-    response = f"Вероятность, что текст написан ИИ: {probability:.2f}%"
+    if probability > 50:
+        response = f"Текст сгенерирован ИИ"
+    else:
+        response = f"Текст написан человеком"
     await update.message.reply_text(response)
 
 
